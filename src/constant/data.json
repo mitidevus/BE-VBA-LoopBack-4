@@ -1,0 +1,73 @@
+{
+  "leagues": [
+    {
+      "id": 1,
+      "name": "2023",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 2,
+      "name": "ECPO",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 3,
+      "name": "ECPR",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 4,
+      "name": "Playoffs",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 5,
+      "name": "VBA Regular",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 6,
+      "name": "VBA by MB",
+      "type": "VBA 5x5"
+    },
+    {
+      "id": 7,
+      "name": "Vietnam Basketball Association",
+      "type": "VBA 5x5"
+    }
+  ],
+  "seasons": [
+    {
+      "id": 1,
+      "name": "2023"
+    },
+    {
+      "id": 2,
+      "name": "2022"
+    },
+    {
+      "id": 3,
+      "name": "2021"
+    },
+    {
+      "id": 4,
+      "name": "2020"
+    },
+    {
+      "id": 5,
+      "name": "2019"
+    },
+    {
+      "id": 6,
+      "name": "2018"
+    },
+    {
+      "id": 7,
+      "name": "2017"
+    },
+    {
+      "id": 8,
+      "name": "2016"
+    }
+  ]
+}
