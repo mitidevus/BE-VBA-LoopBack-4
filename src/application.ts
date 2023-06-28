@@ -1,5 +1,6 @@
 import {BootMixin} from '@loopback/boot';
 import {ApplicationConfig} from '@loopback/core';
+import {CronComponent} from '@loopback/cron';
 import {RepositoryMixin} from '@loopback/repository';
 import {RestApplication} from '@loopback/rest';
 import {
@@ -73,5 +74,7 @@ export class BasketBallApplication extends BootMixin(
     this.bind(RANKING_SERVICE).toClass(RankingService);
     this.bind(CRAWL_SERVICE).toClass(CrawlDataService);
     this.bind(FILE_SERVICE).toClass(FileService);
+
+    this.component(CronComponent);
   }
 }
