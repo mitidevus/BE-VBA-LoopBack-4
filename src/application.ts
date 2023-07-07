@@ -47,6 +47,8 @@ export class BasketBallApplication extends BootMixin(
     // Set up default home page
     this.static('/', path.join(__dirname, '../public'));
 
+    this.setUpBindings();
+
     // Customize @loopback/rest-explorer configuration here
     this.configure(RestExplorerBindings.COMPONENT).to({
       path: '/explorer',
@@ -64,7 +66,10 @@ export class BasketBallApplication extends BootMixin(
       },
     };
 
-    // Binding
+    this.component(CronComponent);
+  }
+
+  setUpBindings(): void {
     this.bind(CLUB_SERVICE).toClass(ClubService);
     this.bind(SEASON_SERVICE).toClass(SeasonService);
     this.bind(LEAGUE_SERVICE).toClass(LeagueService);
@@ -74,7 +79,5 @@ export class BasketBallApplication extends BootMixin(
     this.bind(RANKING_SERVICE).toClass(RankingService);
     this.bind(CRAWL_SERVICE).toClass(CrawlDataService);
     this.bind(FILE_SERVICE).toClass(FileService);
-
-    this.component(CronComponent);
   }
 }

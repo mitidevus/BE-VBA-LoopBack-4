@@ -1,4 +1,3 @@
-import {CronJob, asCronJob} from '@loopback/cron';
 import {ApplicationConfig, BasketBallApplication} from './application';
 export * from './application';
 
@@ -7,15 +6,14 @@ export async function main(options: ApplicationConfig = {}) {
   await app.boot();
   await app.start();
 
-  const job = new CronJob({
-    cronTime: '*/10 * * * * *',
-    onTick: () => {
-      //   await migrateDatabase(app);
-      console.log('Hello');
-    },
-    start: true, // Start the job immediately
-  });
-  app.bind('cron.jobs.job1').to(job).apply(asCronJob);
+  // const job = new CronJob({
+  //   cronTime: '*/10 * * * * *',
+  //   onTick: async () => {
+  //     await migrateDatabase(app);
+  //   },
+  //   start: true,
+  // });
+  // app.bind('cron.jobs.job1').to(job).apply(asCronJob);
 
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);

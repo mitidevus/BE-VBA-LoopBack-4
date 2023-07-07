@@ -26,6 +26,27 @@ export class ClubController {
     public clubRepository: ClubRepository,
   ) {}
 
+  // @post('/clubs')
+  // @response(200, {
+  //   description: 'Club model instance',
+  //   content: {'application/json': {schema: getModelSchemaRef(Club)}},
+  // })
+  // async create(
+  //   @requestBody({
+  //     content: {
+  //       'application/json': {
+  //         schema: getModelSchemaRef(Club, {
+  //           title: 'NewClub',
+  //           exclude: ['id'],
+  //         }),
+  //       },
+  //     },
+  //   })
+  //   club: Omit<Club, 'id'>,
+  // ): Promise<Club> {
+  //   return this.clubRepository.create(club);
+  // }
+
   @post('/clubs')
   @response(200, {
     description: 'Club model instance',
@@ -37,12 +58,11 @@ export class ClubController {
         'application/json': {
           schema: getModelSchemaRef(Club, {
             title: 'NewClub',
-            exclude: ['id'],
           }),
         },
       },
     })
-    club: Omit<Club, 'id'>,
+    club: Club,
   ): Promise<Club> {
     return this.clubRepository.create(club);
   }

@@ -78,10 +78,6 @@ async function crawlClubData(url: string): Promise<Club> {
 export class ClubService {
   constructor(@service(FileService) public fileService: FileService) {}
 
-  async print(): Promise<void> {
-    console.log('HELLO');
-  }
-
   async crawlClubs(): Promise<Club[]> {
     try {
       console.log('Crawling Clubs...');

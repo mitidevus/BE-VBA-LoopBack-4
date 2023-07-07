@@ -20,8 +20,7 @@ export async function migrateDatabase(
       'services.CrawlDataService',
     );
 
-    // const timestamp = await crawlDataService.crawlData();
-    const timestamp = 1687505688;
+    const timestamp = await crawlDataService.crawlData();
     const filePath = `../../data/${timestamp}.json`;
 
     await migrateLeague(dataSource, filePath);
