@@ -1,4 +1,5 @@
 import {ApplicationConfig, BasketBallApplication} from './application';
+import {migrateDatabase} from './migrations';
 export * from './application';
 
 export async function main(options: ApplicationConfig = {}) {
@@ -14,6 +15,8 @@ export async function main(options: ApplicationConfig = {}) {
   //   start: true,
   // });
   // app.bind('cron.jobs.job1').to(job).apply(asCronJob);
+
+  await migrateDatabase(app);
 
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);

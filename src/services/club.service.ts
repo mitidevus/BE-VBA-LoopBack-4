@@ -27,9 +27,9 @@ async function crawlClubData(url: string): Promise<Club> {
     .siblings('div')
     .text();
 
-  const website = $('.styles_section-club-info__1d5ac a[href^="http"]')
-    .eq(0)
-    .attr('href');
+  const website =
+    $('.styles_section-club-info__1d5ac a[href^="http"]').eq(0).attr('href') ??
+    'Đang cập nhật';
 
   const email = $('.styles_section-club-info__1d5ac a[href^="mailto"]')
     .clone()
