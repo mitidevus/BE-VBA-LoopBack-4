@@ -31,7 +31,8 @@ export class MatchService {
           const matchId = $(element).attr('id');
           const VBAId = matchId ? parseInt(matchId.replace('extfix_', '')) : -1;
 
-          const date = $(element).find('.match-time span').text();
+          const dateString = $(element)?.find('.match-time span')?.text();
+          const date = new Date(dateString)?.toISOString();
 
           const stadium = $(element).find('.match-venue .venuename').text();
 
